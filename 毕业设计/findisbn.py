@@ -22,6 +22,10 @@ class BarcodeReader(QMainWindow):
         self.pause_button.setGeometry(10, 560, 100, 30)
         self.pause_button.clicked.connect(self.toggle_pause)
 
+        self.pause_button = QPushButton("查询", self)
+        self.pause_button.setGeometry(120, 560, 100, 30)
+        self.pause_button.clicked.connect(self.git_api)
+
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_frame)
         self.timer.start(30)
@@ -32,7 +36,8 @@ class BarcodeReader(QMainWindow):
 
     def toggle_pause(self):
         self.pause = not self.pause
-
+    def git_api(self):
+        a=1
     def update_frame(self):
         if not self.pause:
             ret, frame = self.cam.read()
