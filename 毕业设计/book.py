@@ -85,7 +85,7 @@ class MainWindow(QMainWindow):
   }
 }
         book_info = data["data"]["details"][0]
-
+        print(book_info)
         self.book_title.setText(f"Book Title: {book_info['title']}")
         self.isbn.setText(f"ISBN: {book_info['isbn']}")
         self.publisher.setText(f"Publisher: {book_info['publisher']}")
